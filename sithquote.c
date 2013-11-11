@@ -9,6 +9,12 @@ int main (int argc, char *argv[])
     char *quote;
     int i = 1;
     int j = 0;
+    int buffer = 10;
+
+    /* TODO: Set up program to accept pipes
+     * fgets(buffer, 10, stdin);
+     * else, -r should get random
+     * and quotes should allow specified input */
 
     if (argc == 2) {
 	quote = argv[1];
@@ -79,7 +85,7 @@ int main (int argc, char *argv[])
 	    quote = "The Force is weak with you";
 	}
     }
-    printf("\033[1;30m");
+    printf("\033[2J\033[1;H\033[1;30m");
     while (quote[j] != '\0') {
 	putchar (quote[j++]);
 	printf("\033[1;3%dm", i++);
