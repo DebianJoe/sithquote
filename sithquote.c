@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 
-int main ()
+int main (int argc, char *argv[])
 {
     srand(time(NULL));
     int r = rand() % 20; /*This sets the range allowed*/
