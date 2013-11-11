@@ -7,6 +7,11 @@ int main (int argc, char *argv[])
 {
     srand(time(NULL));
     char *quote;
+    int i = 1;
+    int j = 0;
+
+    /*if argc > 1;*/
+
     int r = rand() % 20; /*This sets the range allowed*/
     switch(r) {
     case 1:
@@ -49,7 +54,7 @@ int main (int argc, char *argv[])
 	quote = "I can die a hundred times, Exile, and each time I shall rise, as strong as before. -Darth Sion";
 	break;
     case 14:
-	quote = "she will try to break you, and when she does you will fall, and if you do, you will die. -Darth Sion";
+	quote = "She will try to break you, and when she does you will fall, and if you do, you will die. -Darth Sion";
 	break;
     case 15:
 	quote = "As long as the dark side flows through the cracks of my flesh, I cannot be killed. -Darth Sion";
@@ -73,6 +78,14 @@ int main (int argc, char *argv[])
 	quote = "The Force is weak with you";
     }
 
-printf("%s\n", quote);
+    printf("\033[1;30m");
+    while (quote[j] != '\0') {
+	putchar (quote[j++]);
+	printf("\033[1;3%dm", i++);
+	if (i == 9){
+	    i = 0;
+	}
+    }
+    printf("\033[1;m\n");
     return 0;
 }
