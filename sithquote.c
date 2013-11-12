@@ -3,8 +3,11 @@
 #include <stdio.h>
 #include <string.h>
 
+/****************************************************/
 /*Change this line to declare yur custom quote file */
+
 const char* dir = { "/home/joe/.quotes" };
+/****************************************************/
 
 void sith_q (void);
 void user_q (void);
